@@ -23,13 +23,13 @@
 **Автоматическая установка одной командой:**
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/SoKnight/zapret-discord-youtube-macos/main/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/mnwa2006/zapret-discord-youtube-macos/main/setup.sh)
 ```
 
 > [!TIP]
 > Если команда выше не работает, попробуйте альтернативный вариант:
 > ```bash
-> bash <(curl -s https://raw.githubusercontent.com/SoKnight/zapret-discord-youtube-macos/main/setup.sh | psub)
+> bash <(curl -s https://raw.githubusercontent.com/mnwa2006/zapret-discord-youtube-macos/main/setup.sh | psub)
 > ```
 
 **Что делает скрипт установки:**
