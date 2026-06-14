@@ -41,13 +41,13 @@ sudo rm -rf "/opt/zapret"
 
 # Получение последней версии zapret с GitHub API
 echo "Определение последней версии zapret..."
-ZAPRET_VERSION=$(curl -s "https://api.github.com/repos/bol-van/zapret/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+ZAPRET_VERSION=$(curl -s "https://api.github.com/repos/bol-van/zapret2/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 
 if [ -z "$ZAPRET_VERSION" ]; then
   echo "Не удалось получить версию через GitHub API. Используем git ls-remote..."
   
   # Получить все теги, отсортировать их по версии и выбрать последний
-  ZAPRET_VERSION=$(git ls-remote --tags https://github.com/bol-van/zapret.git |
+  ZAPRET_VERSION=$(git ls-remote --tags https://github.com/bol-van/zapret2.git |
                   grep -v '\^{}' |
                   awk -F/ '{print $NF}' |
                   sed 's/^v//' |
@@ -65,7 +65,7 @@ echo "Последняя версия zapret: $ZAPRET_VERSION"
 
 # Закачка последнего релиза bol-van/zapret
 echo "Скачивание последнего релиза zapret..."
-if ! wget -O "$HOME/tmp/zapret-$ZAPRET_VERSION.tar.gz" "https://github.com/bol-van/zapret/releases/download/$ZAPRET_VERSION/zapret-$ZAPRET_VERSION.tar.gz"; then
+if ! wget -O "$HOME/tmp/zapret-$ZAPRET_VERSION.tar.gz" "https://github.com/bol-van/zapret2/releases/download/$ZAPRET_VERSION/zapret-$ZAPRET_VERSION.tar.gz"; then
   echo "Ошибка: не удалось скачать zapret."
   exit 1
 fi
@@ -117,7 +117,7 @@ echo "Клонирование репозитория с конфигами..."
 if [ -d "$HOME/zapret-configs" ]; then
   rm -rf "$HOME/zapret-configs"
 fi
-if ! git clone https://github.com/SoKnight/zapret-discord-youtube-macos.git "$HOME/zapret-configs"; then
+if ! git clone https://github.com/mnwa2006/zapret-discord-youtube-macos.git "$HOME/zapret-configs"; then
   echo "Ошибка: не удалось клонировать репозиторий с конфигами."
   exit 1
 fi
