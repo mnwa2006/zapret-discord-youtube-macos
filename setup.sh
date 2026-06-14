@@ -65,7 +65,7 @@ echo "Последняя версия zapret: $ZAPRET_VERSION"
 
 # Закачка последнего релиза bol-van/zapret
 echo "Скачивание последнего релиза zapret..."
-if ! wget -O "$HOME/tmp/zapret-$ZAPRET_VERSION.tar.gz" "https://github.com/bol-van/zapret2/releases/download/$ZAPRET_VERSION/zapret2-$ZAPRET_VERSION.tar.gz"; then
+if ! wget -O "$HOME/tmp/zapret2-$ZAPRET_VERSION.tar.gz" "https://github.com/bol-van/zapret2/releases/download/$ZAPRET_VERSION/zapret2-$ZAPRET_VERSION.tar.gz"; then
   echo "Ошибка: не удалось скачать zapret."
   exit 1
 fi
