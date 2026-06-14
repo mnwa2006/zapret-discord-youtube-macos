@@ -72,7 +72,7 @@ fi
 
 # Распаковка архива
 echo "Распаковка zapret..."
-if ! tar -xvf "$HOME/tmp/zapret-$ZAPRET_VERSION.tar.gz" -C "$HOME/tmp"; then
+if ! tar -xvf "$HOME/tmp/zapret2-$ZAPRET_VERSION.tar.gz" -C "$HOME/tmp"; then
   echo "Ошибка: не удалось распаковать zapret."
   exit 1
 fi
@@ -81,12 +81,12 @@ fi
 ZAPRET_DIR_VERSION=$(echo $ZAPRET_VERSION | sed 's/^v//')
 echo "Определение пути распакованного архива..."
 
-if [ -d "$HOME/tmp/zapret-$ZAPRET_DIR_VERSION" ]; then
-  ZAPRET_EXTRACT_DIR="$HOME/tmp/zapret-$ZAPRET_DIR_VERSION"
-elif [ -d "$HOME/tmp/zapret-$ZAPRET_VERSION" ]; then
-  ZAPRET_EXTRACT_DIR="$HOME/tmp/zapret-$ZAPRET_VERSION"
+if [ -d "$HOME/tmp/zapret2-$ZAPRET_DIR_VERSION" ]; then
+  ZAPRET_EXTRACT_DIR="$HOME/tmp/zapret2-$ZAPRET_DIR_VERSION"
+elif [ -d "$HOME/tmp/zapret2-$ZAPRET_VERSION" ]; then
+  ZAPRET_EXTRACT_DIR="$HOME/tmp/zapret2-$ZAPRET_VERSION"
 else
-  ZAPRET_EXTRACT_DIR=$(find "$HOME/tmp" -type d -name "zapret-*" | head -n 1)
+  ZAPRET_EXTRACT_DIR=$(find "$HOME/tmp" -type d -name "zapret2-*" | head -n 1)
   if [ -z "$ZAPRET_EXTRACT_DIR" ]; then
     echo "Ошибка: не удалось найти распакованную директорию zapret."
     echo "Содержимое $HOME/tmp:"
